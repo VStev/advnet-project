@@ -5,7 +5,7 @@ class GradientBoosting():
 
     def create_model(self, inputs):
         n, o, r, d = inputs
-        model = XGBClassifier(n_estimators = n, objective = o, learning_rate = r, max_depth = d)
+        self.model = XGBClassifier(n_estimators = n, objective = o, learning_rate = r, max_depth = d)
     
     def train_model(self, trainset):
         data, label = trainset
@@ -15,4 +15,4 @@ class GradientBoosting():
         return self.model.predict(data)
 
     def __init__(self, inputs) -> None:
-        create_model(inputs)
+        self.create_model(inputs)

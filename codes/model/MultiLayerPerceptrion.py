@@ -7,7 +7,7 @@ class MultiLayerPerceptron():
     optim = any
 
     def create_model(self, inputs):
-        activation, opt, r = inputs
+        opt, r = inputs
         self.model = nn.Sequential()
         self.model.add.module("dense1", nn.linear(42, 100)) #input dim, output dim
         self.model.add.module("act1", nn.ReLU())
@@ -27,7 +27,7 @@ class MultiLayerPerceptron():
     def train_model(self, trainset, epochs):
         data, label = trainset
         for n in range(epochs):
-            ouptuts = self.model(data)
+            outputs = self.model(data)
             loss = self.loss_fun(outputs, label)
             self.optim.zero_grad()
             loss.backward()
