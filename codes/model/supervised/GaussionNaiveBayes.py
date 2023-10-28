@@ -13,5 +13,5 @@ class GaussionNaiveBayes():
     def do_prediction(self, data):
         return self.model.predict(data)
     
-    def __init__(self, inputs) -> None:
-        self.create_model(inputs)
+    def __init__(self) -> None:
+        self.create_model()
